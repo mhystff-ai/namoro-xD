@@ -2,25 +2,105 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Teste</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedido Importante 💍</title>
+
 <style>
 body {
-  margin: 0;
-  height: 100vh;
-  background: pink;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
 }
-.box {
-  background: white;
-  padding: 40px;
-  border-radius: 20px;
-  font-size: 24px;
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.buttons {
+    margin-top: 30px;
+    position: relative;
+    height: 120px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#yes {
+    background: #38b000;
+    color: white;
+}
+
+#no {
+    background: #d00000;
+    color: white;
+    position: absolute;
+    left: 160px;
 }
 </style>
 </head>
+
 <body>
-  <div class="box">FUNCIONOU 💖</div>
+
+<div class="container">
+    <h1>Quer casar comigo? 💍</h1>
+    <p>Prometo te escolher todos os dias, para sempre.</p>
+
+    <div class="buttons">
+        <button id="yes">Sim 💖</button>
+        <button id="no">Não 😢</button>
+    </div>
+</div>
+
+<script>
+const noBtn = document.getElementById("no");
+const buttons = document.querySelector(".buttons");
+
+noBtn.addEventListener("mouseover", () => {
+    const maxX = buttons.clientWidth - noBtn.clientWidth;
+    const maxY = buttons.clientHeight - noBtn.clientHeight;
+
+    noBtn.style.left = Math.random() * maxX + "px";
+    noBtn.style.top = Math.random() * maxY + "px";
+});
+
+document.getElementById("yes").onclick = () => {
+    document.body.innerHTML = `
+        <div style="
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#ff758c,#ff7eb3);
+            font-family:Arial;
+        ">
+            <div style="
+                background:white;
+                padding:50px;
+                border-radius:20px;
+                text-align:center;
+                box-shadow:0 20px 40px rgba(0,0,0,.2);
+            ">
+                <h1>ELA DISSE SIM 💍💖</h1>
+                <p>Agora é oficial. Vamos casar 😍</p>
+            </div>
+        </div>
+    `;
+};
+</script>
+
 </body>
 </html>
