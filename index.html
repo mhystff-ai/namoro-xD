@@ -6,54 +6,31 @@
 <title>Pedido Importante 💖</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
-}
-
 body {
+    margin: 0;
     height: 100vh;
     background: linear-gradient(135deg, #ff758c, #ff7eb3);
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
 }
 
 .container {
     background: white;
-    padding: 50px;
+    padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
     text-align: center;
-    width: 90%;
-    max-width: 500px;
-}
-
-h1 {
-    font-size: 2.2rem;
-    color: #ff4d6d;
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 1.1rem;
-    margin-bottom: 35px;
-}
-
-.buttons {
-    position: relative;
-    height: 120px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
 button {
-    padding: 15px 35px;
+    padding: 15px 30px;
     font-size: 18px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: 0.2s;
+    margin: 10px;
 }
 
 #yes {
@@ -61,5 +38,30 @@ button {
     color: white;
 }
 
-#yes:hover {
-    transf
+#no {
+    background: #d00000;
+    color: white;
+    position: absolute;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Quer namorar comigo? 💘</h1>
+    <button id="yes" onclick="alert('Sabia 😍💖')">Sim</button>
+    <button id="no">Não</button>
+</div>
+
+<script>
+const noBtn = document.getElementById("no");
+
+noBtn.addEventListener("mouseover", () => {
+    noBtn.style.left = Math.random() * 80 + "%";
+    noBtn.style.top = Math.random() * 80 + "%";
+});
+</script>
+
+</body>
+</html>
